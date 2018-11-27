@@ -71,7 +71,7 @@ for i in range(1,4):
         Items.get('DWD_Warnung_' + str(i) + '_Start').state = dateutil.parser.parse(data_sorted[i-1][1])
         Items.get('DWD_Warnung_' + str(i) + '_End').state = dateutil.parser.parse(data_sorted[i-1][2])
         Items.get('DWD_Warnung_' + str(i) + '_Group').state = data_sorted[i-1][5]
-        Items.get('DWD_Warnung_' + str(i) + '_Parameter').state = data_sorted[i-1][6]
+        Items.get('DWD_Warnung_' + str(i) + '_Parameter').state = data_sorted[i-1][6].encode('utf-8').decode('iso-8859-1')
     else:
         Items.get('DWD_Warnung_' + str(i) + '_Event').state = '0'
         Items.get('DWD_Warnung_' + str(i) + '_Severity').state = '0'
